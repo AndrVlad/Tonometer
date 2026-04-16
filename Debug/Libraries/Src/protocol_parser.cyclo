@@ -1,0 +1,14 @@
+protocol_parser.c:95:6:updateNumAvailableMeasData	7
+protocol_parser.c:130:6:setFSMProtocolState	1
+protocol_parser.c:135:6:fillDataFrame	1
+protocol_parser.c:164:6:fillDataField	7
+protocol_parser.c:212:6:fillResponseFrame	2
+protocol_parser.c:249:6:sendPreviousResponse	1
+protocol_parser.c:262:6:updateSavedResponse	3
+protocol_parser.c:286:6:parserFSM	48
+protocol_parser.c:453:6:checkCRC32	2
+protocol_parser.c:470:10:calculateCRC32	2
+protocol_parser.c:478:6:sensorInit	1
+protocol_parser.c:497:6:sendInitCTRL	1
+protocol_parser.c:502:6:sendRxCompleteCTRL	1
+protocol_parser.c:508:6:resetFSMProtocol	1
