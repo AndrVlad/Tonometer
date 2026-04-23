@@ -3239,8 +3239,8 @@ static void MX_TIM2_Init(void)
   sConfigOC.Pulse = 1;
  8001aa4:	2301      	movs	r3, #1
  8001aa6:	60bb      	str	r3, [r7, #8]
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
- 8001aa8:	2300      	movs	r3, #0
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_LOW;
+ 8001aa8:	2302      	movs	r3, #2
  8001aaa:	60fb      	str	r3, [r7, #12]
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
  8001aac:	2300      	movs	r3, #0
@@ -18417,10 +18417,10 @@ void initResponseBuffer() {
  8006ea0:	4b17      	ldr	r3, [pc, #92]	; (8006f00 <initResponseBuffer+0x6c>)
  8006ea2:	22af      	movs	r2, #175	; 0xaf
  8006ea4:	705a      	strb	r2, [r3, #1]
-	wait_response_frame[1] = STATE_WAIT;
+	wait_response_frame[2] = STATE_WAIT;
  8006ea6:	4b16      	ldr	r3, [pc, #88]	; (8006f00 <initResponseBuffer+0x6c>)
  8006ea8:	2203      	movs	r2, #3
- 8006eaa:	705a      	strb	r2, [r3, #1]
+ 8006eaa:	709a      	strb	r2, [r3, #2]
 	wait_response_frame[258] = 0xFF;
  8006eac:	4b14      	ldr	r3, [pc, #80]	; (8006f00 <initResponseBuffer+0x6c>)
  8006eae:	22ff      	movs	r2, #255	; 0xff

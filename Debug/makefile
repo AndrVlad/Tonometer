@@ -54,6 +54,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Tonometer.list \
 
+OBJCOPY_HEX += \
+Tonometer.hex \
+
 
 # All Target
 all: main-build
@@ -77,12 +80,17 @@ Tonometer.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Tonometer.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Tonometer.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) Tonometer.elf Tonometer.list Tonometer.map default.size.stdout
+	-$(RM) Tonometer.elf Tonometer.hex Tonometer.list Tonometer.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
