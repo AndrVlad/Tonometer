@@ -6,9 +6,9 @@
 ../Libraries/Src/protocol_parser.c:249:6:sendPreviousResponse	8	static
 ../Libraries/Src/protocol_parser.c:262:6:updateSavedResponse	24	static
 ../Libraries/Src/protocol_parser.c:286:6:parserFSM	8	static
-../Libraries/Src/protocol_parser.c:453:6:checkCRC32	24	static
-../Libraries/Src/protocol_parser.c:470:10:calculateCRC32	24	static
-../Libraries/Src/protocol_parser.c:478:6:sensorInit	8	static
-../Libraries/Src/protocol_parser.c:497:6:sendInitCTRL	4	static
-../Libraries/Src/protocol_parser.c:502:6:sendRxCompleteCTRL	4	static
-../Libraries/Src/protocol_parser.c:508:6:resetFSMProtocol	8	static
+../Libraries/Src/protocol_parser.c:454:6:checkCRC32	24	static
+../Libraries/Src/protocol_parser.c:471:10:calculateCRC32	24	static
+../Libraries/Src/protocol_parser.c:479:6:sensorInit	8	static
+../Libraries/Src/protocol_parser.c:498:6:sendInitCTRL	4	static
+../Libraries/Src/protocol_parser.c:503:6:sendRxCompleteCTRL	4	static
+../Libraries/Src/protocol_parser.c:509:6:resetFSMProtocol	8	static
