@@ -1,5 +1,4 @@
-Libraries/Src/SPI_Connection.o: ../Libraries/Src/SPI_Connection.c \
- C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/SPI_Connection.h \
+Core/Src/tonometer_logic.o: ../Core/Src/tonometer_logic.c \
  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -28,9 +27,7 @@ Libraries/Src/SPI_Connection.o: ../Libraries/Src/SPI_Connection.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/protocol_common.h \
- C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/protocol_parser.h
-C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/SPI_Connection.h:
+ ../Core/Inc/tonometer_maths.h ../Core/Inc/tonometer_logic.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -60,5 +57,5 @@ C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/SPI_Connection.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/protocol_common.h:
-C:/Users/vlado/Desktop/Temp/Tonometer/Libraries/Inc/protocol_parser.h:
+../Core/Inc/tonometer_maths.h:
+../Core/Inc/tonometer_logic.h:

@@ -11,9 +11,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-
-
-
 int16_t peaksM [200];
 int16_t pressuresM [200];
 int16_t absoluteCounter = 0;

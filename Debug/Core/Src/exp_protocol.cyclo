@@ -1,0 +1,4 @@
+exp_protocol.c:14:6:parser_exp	3
+exp_protocol.c:32:6:HAL_UART_RxCpltCallback	1
+exp_protocol.c:41:6:uart_init	1
+exp_protocol.c:46:6:send_data	1

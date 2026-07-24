@@ -26,6 +26,7 @@
 #include "SPI_connection.h"
 #include "protocol_parser.h"
 #include "tonometer_logic.h"
+#include "exp_protocol.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,6 +69,7 @@ volatile uint16_t page_ptr = 0;
 volatile char new_conv = 0; //new ADC conversion done
 uint8_t res_buf[256] = {0};
 uint8_t page_pos_ptr = 0; //ptr to free pos in page in WORDS
+bool need_to_send = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -146,7 +148,9 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  sensorInit();
+
+  TM_init();
+  uart_init();
 
   //TM_start();
   /* USER CODE END 2 */
@@ -156,13 +160,16 @@ int main(void)
   while (1)
   {
 
-	  if (spi_rx_complete) {
-		  spi_rx_complete = false;
-		  parserFSM();
-	  }
+	if (uart1_rx_complete) {
+		parser_exp();
+	}
+
+	if (need_to_send) {
+		need_to_send = false;
+		send_data(getADCVal());
+	}
 
 	  TM_Cycle();
-
 
 //	  if(sw1) {
 //		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);

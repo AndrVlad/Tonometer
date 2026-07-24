@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -64,6 +64,7 @@ extern uint8_t page_pos_ptr ;
 extern volatile uint16_t page_ptr;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
+extern bool need_to_send;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
