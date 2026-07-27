@@ -1,4 +1,4 @@
-../Core/Src/exp_measurement.c:12:10:get_measurement_time	4	static
-../Core/Src/exp_measurement.c:16:6:reset_meas_time	4	static
-../Core/Src/exp_measurement.c:24:6:start_measurement	8	static
-../Core/Src/exp_measurement.c:46:6:stop_measurement	8	static
+../Core/Src/exp_measurement.c:11:10:get_measurement_time	4	static
+../Core/Src/exp_measurement.c:15:6:reset_meas_time	4	static
+../Core/Src/exp_measurement.c:23:6:start_measurement	8	static
+../Core/Src/exp_measurement.c:45:6:stop_measurement	8	static

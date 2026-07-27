@@ -49,12 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
-
-void writeDataToFlash(int32_t val);
 
 /* USER CODE BEGIN EFP */
 extern SPI_HandleTypeDef hspi2;
@@ -72,6 +68,8 @@ extern bool need_to_send;
 #define SW1_GPIO_Port GPIOC
 #define SW2_Pin GPIO_PIN_15
 #define SW2_GPIO_Port GPIOC
+#define LED_Pin GPIO_PIN_0
+#define LED_GPIO_Port GPIOA
 #define FLASH_nRST_Pin GPIO_PIN_3
 #define FLASH_nRST_GPIO_Port GPIOA
 #define FLASH_CS_GPIO_Port_Pin GPIO_PIN_4

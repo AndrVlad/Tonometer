@@ -4,6 +4,7 @@
 #include "main.h"
 #include "tonometer_maths.h"
 #include "tonometer_logic.h"
+#include "exp_measurement.h"
 #include <stdbool.h>
 
 // GLOBALS
@@ -27,10 +28,14 @@ uint8_t TMS = TMS_NONE;
 //extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim1;
 extern UART_HandleTypeDef huart1;
 
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
+
+extern uint32_t measurement_time;
 
 uint16_t lastMainPressure = 0;
 uint16_t pulsePressure = 0;
@@ -186,6 +191,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	if (hadc->Instance == ADC1) {
 		lastMainPressure = HAL_ADC_GetValue(hadc);
 		ADC_val[0] = lastMainPressure;
+		need_to_send = true;
 	}
 	else if (hadc->Instance == ADC2) {
 		pulsePressure = HAL_ADC_GetValue(hadc);
@@ -211,6 +217,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 //		HAL_ADC_Start_IT(&hadc1);
 //		HAL_ADC_Start_IT(&hadc2);
 	}
+
+    if (htim->Instance == TIM1) {
+        __HAL_TIM_SET_COUNTER(&htim1, 0);
+        measurement_time++;
+
+        if (measurement_time >= MEASUREMENT_TIME_MAX_MS) {
+        	measurement_time = 0;
+        }
+    }
+    if (htim->Instance == TIM2) {
+    	led_switch();
+    	__HAL_TIM_SET_COUNTER(&htim2, 0);
+    }
 }
 
 #endif

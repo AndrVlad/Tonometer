@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define MEASUREMENT_TIME_MAX_MS 60000
+
 
 bool measurement_works = false;
 uint32_t measurement_time = 0;
@@ -34,8 +34,8 @@ void start_measurement() {
 	//HAL_ADC_PollForConversion(&hadc1, 100);
 
 	// Запуск таймера времени измерения
-	//HAL_TIM_Base_Start_IT(&htim1);
-	//HAL_TIM_Base_Start_IT(&htim4);
+	HAL_TIM_Base_Start_IT(&htim1);
+	HAL_TIM_Base_Start_IT(&htim2);
 
 	measurement_works = true;
 
@@ -48,9 +48,9 @@ void stop_measurement() {
 
 	measurement_works = false;
 	HAL_TIM_Base_Stop(&htim1);
-	HAL_TIM_Base_Stop(&htim3);
-	HAL_TIM_Base_Stop(&htim4);
-	__HAL_TIM_SET_COUNTER(&htim3,0);
+	//HAL_TIM_Base_Stop(&htim3);
+	HAL_TIM_Base_Stop(&htim2);
+	//__HAL_TIM_SET_COUNTER(&htim3,0);
 	reset_meas_time();
 
 	return;

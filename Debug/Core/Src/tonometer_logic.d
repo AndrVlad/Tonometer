@@ -27,7 +27,8 @@ Core/Src/tonometer_logic.o: ../Core/Src/tonometer_logic.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/tonometer_maths.h ../Core/Inc/tonometer_logic.h
+ ../Core/Inc/tonometer_maths.h ../Core/Inc/tonometer_logic.h \
+ ../Core/Inc/exp_measurement.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -59,3 +60,4 @@ Core/Src/tonometer_logic.o: ../Core/Src/tonometer_logic.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/tonometer_maths.h:
 ../Core/Inc/tonometer_logic.h:
+../Core/Inc/exp_measurement.h:
